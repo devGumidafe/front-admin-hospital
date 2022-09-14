@@ -1,0 +1,66 @@
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input type="text" class="form-control" placeholder="Buscar usuario..." (keyup)="search(txtTerm.value)" #txtTerm />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="loading">
+  <div class="col-12">
+    <div class="alert-info text-center">
+      <h4 class="alert-heading">Cargando...</h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+      <p class="mb-0">
+        Por favor espere
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="!loading">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Usuarios: {{totalUsers}}</h4>
+        <h6 class="card-subtitle">Usuarios registrados en la aplicación</h6>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="w100">Avatar</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th class="w140">Role</th>
+                <th class="text-nowrap w100">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let user of users">
+                <td class="text-center"><img [src]="user?.image | image: 'users'" width="40" title="Avatar usuario" (click)="openModal(user)" class="img-circle cursor"></td>
+                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.lastName}}</td>
+                <td>
+                  <span *ngIf="currentUser.role === 'USER'" class="label label-success">{{user.role}}</span>
+
+                  <select title="Seleccione un rol" class="form-control" [(ngModel)]="user.role" (change)=changeRole(user) *ngIf="currentUser.role === 'ADMIN'">
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="USER">USER</option>
+                  </select>
+                </td>
+                <td class="text-nowrap text-center">
+                  <a data-toggle="tooltip" data-original-title="Eliminar" class="cursor" (click)="deleteUser(user)"> <i class="fa fa-close text-danger"></i> </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

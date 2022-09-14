@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Médico</h4>
+        <h6 class="card-subtitle">Actualizar información</h6>
+
+        <form class="form p-t-20" [formGroup]="doctorForm" (submit)="saveDoctor()">
+          <div class="form-group">
+            <label for="imgDoctor">Foto</label>
+            <div class="input-group">
+              <img [src]="'' | image: 'doctors'" alt="Foto médico" class="w200">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Nombre</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-user"></i></div>
+              <input type="text" class="form-control" name="inputName" placeholder="Nombre del médico" formControlName="name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="selectHospital">Hospital</label>
+            <div class="input-group">
+              <select class="form-control" name="selectHospital" title="Seleccione un hospital" formControlName="hospital">
+                <option value="">Seleccione un hospital</option>
+                <option *ngFor="let hospital of hospitals" [value]="hospital.id">{{hospital.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" [disabled]="doctorForm.invalid">
+            <i class="fa fa-save"></i>
+            Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 animated fadeIn fast" *ngIf="hospitalSelected">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Hospital</h4>
+        <h6 class="card-subtitle">{{hospitalSelected.name}}</h6>
+
+        <div class="input-group">
+          <img [src]="hospitalSelected.image | image: 'doctors'" alt="Foto médico" class="img-thumbnail">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

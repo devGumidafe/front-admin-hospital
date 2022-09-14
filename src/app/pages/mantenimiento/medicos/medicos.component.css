@@ -1,0 +1,15 @@
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table td {
+  vertical-align: middle !important;
+}

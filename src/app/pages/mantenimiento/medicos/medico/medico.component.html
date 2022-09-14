@@ -6,10 +6,10 @@
         <h6 class="card-subtitle">Actualizar información</h6>
 
         <form class="form p-t-20" [formGroup]="doctorForm" (submit)="saveDoctor()">
-          <div class="form-group">
+          <div class="form-group" *ngIf="doctorSelected">
             <label for="imgDoctor">Foto</label>
             <div class="input-group">
-              <img [src]="'' | image: 'doctors'" alt="Foto médico" class="w200">
+              <img [src]="doctorSelected.image | image: 'doctors'" alt="Foto médico" class="w200">
             </div>
           </div>
 
@@ -46,7 +46,7 @@
         <h6 class="card-subtitle">{{hospitalSelected.name}}</h6>
 
         <div class="input-group">
-          <img [src]="hospitalSelected.image | image: 'doctors'" alt="Foto médico" class="img-thumbnail">
+          <img [src]="hospitalSelected.image | image: 'doctors'" alt="Foto médico">
         </div>
 
       </div>

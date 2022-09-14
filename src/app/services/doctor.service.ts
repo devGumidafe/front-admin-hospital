@@ -17,8 +17,12 @@ export class DoctorService {
     return this.httpClient.get<Doctor[]>(`${base_url}/doctors`);
   }
 
+  getDoctorById(id: number) {
+    return this.httpClient.get<Doctor>(`${base_url}/doctors/${id}`);
+  }
+
   createDoctor(doctor: Doctor) {
-    return this.httpClient.post(`${base_url}/doctors`, doctor);
+    return this.httpClient.post<Doctor>(`${base_url}/doctors`, doctor);
   }
 
   updateDoctor(doctor: Doctor) {

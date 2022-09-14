@@ -1,9 +1,9 @@
 import { Hospital } from "./hospital.model";
 
 interface doctorUser {
-  id: number;
-  name: string;
-  image: string;
+  id?: number;
+  name?: string;
+  image?: string;
 }
 
 export class Doctor {

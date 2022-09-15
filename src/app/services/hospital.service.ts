@@ -32,4 +32,7 @@ export class HospitalService {
     return this.httpClient.delete(`${base_url}/hospitals/${hospital.id}`);
   }
 
+  getHospitalByDoctor(doctorId: number) {
+    return this.httpClient.get<Hospital>(`${base_url}/hospitals/doctor/${doctorId}`);
+  }
 }

@@ -41,7 +41,10 @@ export class MedicoComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.activatedRoute.params.subscribe(({ id }) => {
-      this.getDoctorById(id);
+      if (id !== 'new') {
+        this.getHospitalByDoctor(id);
+        this.getDoctorById(id);
+      }
     });
   }
 
@@ -52,10 +55,6 @@ export class MedicoComponent implements OnInit, AfterViewInit {
   }
 
   getDoctorById(id: any) {
-    if (id === 'new') {
-      return;
-    }
-
     this.doctorService.getDoctorById(id)
       .pipe(
         delay(100)
@@ -64,15 +63,19 @@ export class MedicoComponent implements OnInit, AfterViewInit {
         if (!resp) {
           return this.router.navigateByUrl(`/dashboard/medicos`);
         }
-
         this.doctorSelected = resp;
-        this.hospitalSelected = this.doctorSelected.hospital;
 
         this.doctorForm.setValue({
           name: this.doctorSelected.name,
-          hospital: this.doctorSelected.hospital?.id
+          hospital: this.hospitalSelected?.id
         });
       });
+  }
+
+  getHospitalByDoctor(doctorId: number) {
+    this.hospitalService.getHospitalByDoctor(doctorId).subscribe(resp => {
+      this.hospitalSelected = resp;
+    });
   }
 
   saveDoctor() {
@@ -87,7 +90,11 @@ export class MedicoComponent implements OnInit, AfterViewInit {
     const newDoctor = new Doctor();
     newDoctor.name = this.doctorForm.get('name')?.value;
     newDoctor.hospital = this.hospitalSelected;
-    newDoctor.user = this.userService.user;
+    newDoctor.user = {
+      id: this.userService.user.id,
+      name: this.userService.user.name,
+      image: this.userService.user.image,
+    }
 
     this.doctorService.createDoctor(newDoctor).subscribe((resp: any) => {
       Swal.fire('Médico ', `${newDoctor.name} creado con éxito`, 'success');

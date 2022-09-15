@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Doctor } from '../models/doctor.model';
+import { Hospital } from '../models/hospital.model';
 
 const base_url = environment.base_url;
 

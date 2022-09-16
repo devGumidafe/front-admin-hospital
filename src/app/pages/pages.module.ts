@@ -10,14 +10,14 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
-import { MedicosComponent } from './maintenance/medicos/medicos.component';
+import { DoctorsComponent } from './maintenance/doctors/doctors.component';
 import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
 
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { MedicoComponent } from './maintenance/medicos/medico/medico.component';
+import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
 import { SearchComponent } from './search/search.component';
 import { PagesComponent } from './pages.component';
 
@@ -33,8 +33,8 @@ import { PagesComponent } from './pages.component';
     ProfileComponent,
     UsuariosComponent,
     HospitalsComponent,
-    MedicosComponent,
-    MedicoComponent,
+    DoctorsComponent,
+    DoctorComponent,
     SearchComponent,
   ],
   exports: [

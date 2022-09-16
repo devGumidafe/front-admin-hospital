@@ -10,11 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs';
 
 @Component({
-  selector: 'app-medico',
-  templateUrl: './medico.component.html',
-  styleUrls: ['./medico.component.css']
+  selector: 'app-doctor',
+  templateUrl: './doctor.component.html',
+  styleUrls: ['./doctor.component.css']
 })
-export class MedicoComponent implements OnInit, AfterViewInit {
+export class DoctorComponent implements OnInit, AfterViewInit {
 
   public doctorForm!: FormGroup;
   public hospitals: Hospital[] = [];
@@ -61,7 +61,7 @@ export class MedicoComponent implements OnInit, AfterViewInit {
       )
       .subscribe((resp: Doctor): Doctor | any => {
         if (!resp) {
-          return this.router.navigateByUrl(`/dashboard/medicos`);
+          return this.router.navigateByUrl(`/dashboard/doctors`);
         }
         this.doctorSelected = resp;
 
@@ -98,7 +98,7 @@ export class MedicoComponent implements OnInit, AfterViewInit {
 
     this.doctorService.createDoctor(newDoctor).subscribe((resp: any) => {
       Swal.fire('Médico ', `${newDoctor.name} creado con éxito`, 'success');
-      this.router.navigateByUrl(`/dashboard/medicos/${resp.doctor.id}`);
+      this.router.navigateByUrl(`/dashboard/doctors/${resp.doctor.id}`);
     });
   }
 

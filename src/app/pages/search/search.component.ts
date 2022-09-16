@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
   }
 
   openDoctor(doctor: Doctor) {
-    this.router.navigateByUrl(`/dashboard/medicos/${doctor.id}`);
+    this.router.navigateByUrl(`/dashboard/doctors/${doctor.id}`);
   }
 
 }

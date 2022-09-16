@@ -7,11 +7,11 @@ import { SearchesService } from 'src/app/services/searches.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-medicos',
-  templateUrl: './medicos.component.html',
-  styleUrls: ['./medicos.component.css']
+  selector: 'app-doctors',
+  templateUrl: './doctors.component.html',
+  styleUrls: ['./doctors.component.css']
 })
-export class MedicosComponent implements OnInit, OnDestroy {
+export class DoctorsComponent implements OnInit, OnDestroy {
 
   public doctors: Doctor[] = [];
   public totalDoctors: number = 0;

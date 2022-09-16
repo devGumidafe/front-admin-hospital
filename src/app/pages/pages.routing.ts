@@ -6,8 +6,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
-import { MedicoComponent } from './maintenance/medicos/medico/medico.component';
-import { MedicosComponent } from './maintenance/medicos/medicos.component';
+import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
+import { DoctorsComponent } from './maintenance/doctors/doctors.component';
 import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
 import { PagesComponent } from './pages.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -33,8 +33,8 @@ const routes: Routes = [
       // Mantenimientos
       { path: 'usuarios', component: UsuariosComponent, data: { title: 'Mantenimiento usuarios' } },
       { path: 'hospitals', component: HospitalsComponent, data: { title: 'Mantenimiento hospitales' } },
-      { path: 'medicos', component: MedicosComponent, data: { title: 'Mantenimiento médicos' } },
-      { path: 'medicos/:id', component: MedicoComponent, data: { title: 'Editar médico' } },
+      { path: 'doctors', component: DoctorsComponent, data: { title: 'Mantenimiento médicos' } },
+      { path: 'doctors/:id', component: DoctorComponent, data: { title: 'Editar médico' } },
     ]
   }
 ];

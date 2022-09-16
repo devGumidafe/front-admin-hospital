@@ -13,10 +13,11 @@ export class SearchesService {
   constructor(private httpClient: HttpClient) { }
 
   search(type: 'users' | 'doctors' | 'hospitals', term: string) {
-    return this.httpClient.get<any[]>(`${base_url}/${type}/name/${term.toLowerCase()}`)
-      .pipe(
-        map((resp: any) => resp)
-      );
+    return this.httpClient.get<any[]>(`${base_url}/${type}/name/${term.toLowerCase()}`);
+  }
+
+  globalSearch(term: string) {
+    return this.httpClient.get<any[]>(`${base_url}/collections/${term.toLowerCase()}`)
   }
 }
 

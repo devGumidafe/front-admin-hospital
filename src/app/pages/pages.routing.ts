@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
-      { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
-      { path: 'grafica1', component: Grafica1Component, data: { title: 'Gráfica' } },
       { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Ajustes de Tema' } },
-      { path: 'promises', component: PromisesComponent, data: { title: 'Promesas' } },
-      { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
+      { path: 'grafica1', component: Grafica1Component, data: { title: 'Gráfica' } },
       { path: 'profile', component: ProfileComponent, data: { title: 'Perfil' } },
+      { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
+      { path: 'promises', component: PromisesComponent, data: { title: 'Promesas' } },
+      { path: 'search/:value', component: SearchComponent, data: { title: 'Busquedas' } },
+      { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
 
       // Mantenimientos
       { path: 'usuarios', component: UsuariosComponent, data: { title: 'Mantenimiento usuarios' } },

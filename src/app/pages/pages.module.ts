@@ -18,6 +18,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MedicoComponent } from './mantenimiento/medicos/medico/medico.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MedicoComponent } from './mantenimiento/medicos/medico/medico.component
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
+    SearchComponent,
   ],
   exports: [
     DashboardComponent,

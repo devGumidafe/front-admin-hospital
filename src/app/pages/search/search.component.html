@@ -5,11 +5,11 @@
         <div class="table-responsive">
           <h3>Usuarios</h3>
 
-          <div class="alert alert-info text-center">
+          <div class="alert alert-info text-center" *ngIf="users.length === 0">
             <p>0 usuarios encontrados</p>
           </div>
 
-          <table class="table color-table primary-table">
+          <table class="table color-table primary-table" *ngIf="users.length > 0">
             <thead>
               <tr>
                 <th>Avatar</th>
@@ -17,9 +17,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Nigam</td>
+              <tr *ngFor="let user of users">
+                <td><img [src]="user.image | image: 'users'" class="w50" title="Foto usuario"></td>
+                <td>{{user.name}}</td>
               </tr>
             </tbody>
           </table>
@@ -33,11 +33,11 @@
         <div class="table-responsive">
           <h3>Médicos</h3>
 
-          <div class="alert alert-info text-center">
+          <div class="alert alert-info text-center" *ngIf="doctors.length === 0">
             <p>0 médicos encontrados</p>
           </div>
 
-          <table class="table color-table success-table">
+          <table class="table color-table success-table" *ngIf="doctors.length > 0">
             <thead>
               <tr>
                 <th>Foto</th>
@@ -45,9 +45,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Nigam</td>
+              <tr *ngFor="let doctor of doctors">
+                <td><img [src]="doctor.image | image: 'doctors'" class="w50" title="Foto doctor"></td>
+                <td>{{doctor.name}}</td>
               </tr>
             </tbody>
           </table>
@@ -62,11 +62,11 @@
         <div class="table-responsive">
           <h3>Hospitales</h3>
 
-          <div class="alert alert-info text-center">
+          <div class="alert alert-info text-center" *ngIf="hospitals.length === 0">
             <p>0 hospitales encontrados</p>
           </div>
 
-          <table class="table color-table info-table">
+          <table class="table color-table info-table" *ngIf="hospitals.length > 0">
             <thead>
               <tr>
                 <th>Foto</th>
@@ -74,9 +74,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Nigam</td>
+              <tr *ngFor="let hospital of hospitals">
+                <td><img [src]="hospital.image | image: 'hospitals'" class="w50" title="Foto hospital"></td>
+                <td>{{hospital.name}}</td>
               </tr>
             </tbody>
           </table>

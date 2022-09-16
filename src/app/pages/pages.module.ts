@@ -12,13 +12,14 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
 import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
-import { PagesComponent } from './pages.component';
+
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MedicoComponent } from './mantenimiento/medicos/medico/medico.component';
 import { SearchComponent } from './search/search.component';
+import { PagesComponent } from './pages.component';
 
 @NgModule({
   declarations: [

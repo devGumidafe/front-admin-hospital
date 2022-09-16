@@ -9,15 +9,15 @@ import { SharedModule } from './../shared/shared.module';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
-import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
-import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
-import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { MedicosComponent } from './maintenance/medicos/medicos.component';
+import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
 
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { MedicoComponent } from './mantenimiento/medicos/medico/medico.component';
+import { MedicoComponent } from './maintenance/medicos/medico/medico.component';
 import { SearchComponent } from './search/search.component';
 import { PagesComponent } from './pages.component';
 
@@ -32,7 +32,7 @@ import { PagesComponent } from './pages.component';
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    HospitalesComponent,
+    HospitalsComponent,
     MedicosComponent,
     MedicoComponent,
     SearchComponent,

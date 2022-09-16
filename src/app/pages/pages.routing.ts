@@ -5,10 +5,10 @@ import { AuthGuard } from './../guards/auth.guard';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
-import { HospitalesComponent } from './mantenimiento/hospitales/hospitales.component';
-import { MedicoComponent } from './mantenimiento/medicos/medico/medico.component';
-import { MedicosComponent } from './mantenimiento/medicos/medicos.component';
-import { UsuariosComponent } from './mantenimiento/usuarios/usuarios.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { MedicoComponent } from './maintenance/medicos/medico/medico.component';
+import { MedicosComponent } from './maintenance/medicos/medicos.component';
+import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
 import { PagesComponent } from './pages.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -32,7 +32,7 @@ const routes: Routes = [
 
       // Mantenimientos
       { path: 'usuarios', component: UsuariosComponent, data: { title: 'Mantenimiento usuarios' } },
-      { path: 'hospitales', component: HospitalesComponent, data: { title: 'Mantenimiento hospitales' } },
+      { path: 'hospitals', component: HospitalsComponent, data: { title: 'Mantenimiento hospitales' } },
       { path: 'medicos', component: MedicosComponent, data: { title: 'Mantenimiento médicos' } },
       { path: 'medicos/:id', component: MedicoComponent, data: { title: 'Editar médico' } },
     ]

@@ -5,14 +5,14 @@ import { ModalImageService } from 'src/app/services/modal-image.service';
 import { SearchesService } from 'src/app/services/searches.service';
 import Swal from 'sweetalert2';
 
-import { HospitalService } from './../../../services/hospital.service';
+import { HospitalService } from '../../../services/hospital.service';
 
 @Component({
-  selector: 'app-hospitales',
-  templateUrl: './hospitales.component.html',
-  styleUrls: ['./hospitales.component.css']
+  selector: 'app-hospitals',
+  templateUrl: './hospitals.component.html',
+  styleUrls: ['./hospitals.component.css']
 })
-export class HospitalesComponent implements OnInit, OnDestroy {
+export class HospitalsComponent implements OnInit, OnDestroy {
 
   public hospitals: Hospital[] = [];
   public totalHospitals: number = 0;

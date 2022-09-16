@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import Swal from 'sweetalert2';
-import { SearchesService } from './../../../services/searches.service';
+import { SearchesService } from '../../../services/searches.service';
 import { UserService } from 'src/app/services/user.service';
 import { ModalImageService } from 'src/app/services/modal-image.service';
 

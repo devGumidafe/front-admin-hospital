@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SearchesService } from '../../services/searches.service';
 import { User } from '../../models/user.model';
 import { Doctor } from 'src/app/models/doctor.model';
@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   public doctors: Doctor[] = [];
   public hospitals: Hospital[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private searches: SearchesService) { }
+  constructor(private activatedRoute: ActivatedRoute, private searches: SearchesService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({ value }) => {
@@ -30,6 +30,10 @@ export class SearchComponent implements OnInit {
       this.doctors = resp.doctors;
       this.hospitals = resp.hospitals;
     });
+  }
+
+  openDoctor(doctor: Doctor) {
+    this.router.navigateByUrl(`/dashboard/medicos/${doctor.id}`);
   }
 
 }

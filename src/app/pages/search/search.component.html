@@ -5,19 +5,19 @@
         <div class="table-responsive">
           <h3>Usuarios</h3>
 
-          <div class="alert alert-info text-center" *ngIf="users.length === 0">
+          <div class="alert alert-info text-center animated fadeIn fast" *ngIf="users.length === 0">
             <p>0 usuarios encontrados</p>
           </div>
 
-          <table class="table color-table primary-table" *ngIf="users.length > 0">
+          <table class="table color-table primary-table" *ngIf="users.length> 0">
             <thead>
               <tr>
-                <th>Avatar</th>
+                <th>Foto</th>
                 <th>Nombre</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let user of users">
+              <tr *ngFor="let user of users" class="animated fadeIn fast">
                 <td><img [src]="user.image | image: 'users'" class="w50" title="Foto usuario"></td>
                 <td>{{user.name}}</td>
               </tr>
@@ -33,7 +33,7 @@
         <div class="table-responsive">
           <h3>Médicos</h3>
 
-          <div class="alert alert-info text-center" *ngIf="doctors.length === 0">
+          <div class="alert alert-info text-center animated fadeIn fast" *ngIf="doctors.length === 0">
             <p>0 médicos encontrados</p>
           </div>
 
@@ -45,7 +45,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let doctor of doctors">
+              <tr *ngFor="let doctor of doctors" class="animated fadeIn fast cursor" (click)="openDoctor(doctor)">
                 <td><img [src]="doctor.image | image: 'doctors'" class="w50" title="Foto doctor"></td>
                 <td>{{doctor.name}}</td>
               </tr>
@@ -62,7 +62,7 @@
         <div class="table-responsive">
           <h3>Hospitales</h3>
 
-          <div class="alert alert-info text-center" *ngIf="hospitals.length === 0">
+          <div class="alert alert-info text-center animated fadeIn fast" *ngIf="hospitals.length === 0">
             <p>0 hospitales encontrados</p>
           </div>
 
@@ -74,7 +74,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let hospital of hospitals">
+              <tr *ngFor="let hospital of hospitals" class="animated fadeIn fast">
                 <td><img [src]="hospital.image | image: 'hospitals'" class="w50" title="Foto hospital"></td>
                 <td>{{hospital.name}}</td>
               </tr>

@@ -8,7 +8,7 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
 import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
 import { DoctorsComponent } from './maintenance/doctors/doctors.component';
-import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
+import { UsersComponent } from './maintenance/users/users.component';
 import { PagesComponent } from './pages.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
 
       // Mantenimientos
-      { path: 'usuarios', component: UsuariosComponent, data: { title: 'Mantenimiento usuarios' } },
+      { path: 'users', component: UsersComponent, data: { title: 'Mantenimiento usuarios' } },
       { path: 'hospitals', component: HospitalsComponent, data: { title: 'Mantenimiento hospitales' } },
       { path: 'doctors', component: DoctorsComponent, data: { title: 'Mantenimiento médicos' } },
       { path: 'doctors/:id', component: DoctorComponent, data: { title: 'Editar médico' } },

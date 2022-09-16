@@ -7,11 +7,11 @@ import { UserService } from 'src/app/services/user.service';
 import { ModalImageService } from 'src/app/services/modal-image.service';
 
 @Component({
-  selector: 'app-usuarios',
-  templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class UsuariosComponent implements OnInit, OnDestroy {
+export class UsersComponent implements OnInit, OnDestroy {
 
   public totalUsers: number = 0;
   public users: User[] = [];

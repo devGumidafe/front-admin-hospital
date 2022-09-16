@@ -11,7 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
 import { DoctorsComponent } from './maintenance/doctors/doctors.component';
-import { UsuariosComponent } from './maintenance/usuarios/usuarios.component';
+import { UsersComponent } from './maintenance/users/users.component';
 
 import { ProfileComponent } from './profile/profile.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -31,7 +31,7 @@ import { PagesComponent } from './pages.component';
     PromisesComponent,
     RxjsComponent,
     ProfileComponent,
-    UsuariosComponent,
+    UsersComponent,
     HospitalsComponent,
     DoctorsComponent,
     DoctorComponent,

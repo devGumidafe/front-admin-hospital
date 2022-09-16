@@ -40,12 +40,19 @@ export class LoginComponent implements OnInit {
             localStorage.removeItem('email');
             localStorage.removeItem('remember');
           }
-          
+
           this.router.navigateByUrl('/');
         },
         (err) => {
           Swal.fire('Error', err.error.message, 'error');
         });
+  }
+
+  fieldHasError(field: string): boolean {
+    if (this.loginForm.get(field)?.invalid && this.formSubmit) {
+      return true;
+    }
+    return false;
   }
 }
 

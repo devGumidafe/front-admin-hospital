@@ -46,7 +46,7 @@ export class UserService {
         tap((response: any) => {
           localStorage.setItem('token', response.token);
           localStorage.setItem('user', JSON.stringify(response.user));
-          console.log('Login response: ', response);
+          localStorage.setItem('menu', JSON.stringify(response.menu));
 
           const { name, lastName, email, id, image, role, googleCreated } = response.user;
           this.user = new User(name, lastName, email, '', id, image, role, googleCreated);

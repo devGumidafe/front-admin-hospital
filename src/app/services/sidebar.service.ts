@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Menu } from '../models/menu.model';
 
 @Injectable({
@@ -6,7 +7,9 @@ import { Menu } from '../models/menu.model';
 })
 export class SidebarService {
 
-  menu: Menu[] = [
+  public menu: Menu[] = [];
+
+  /* menu: Menu[] = [
     {
       title: 'Dashboard',
       icon: 'mdi mdi-gauge',
@@ -27,7 +30,16 @@ export class SidebarService {
         { title: 'Médicos', url: 'doctors' },
       ]
     }
-  ];
+  ];*/
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  loadMenu() {
+    this.menu = JSON.parse(localStorage.getItem('menu')!) || [];
+
+    if (this.menu.length === 0) {
+      this.router.navigateByUrl('/auth/login');
+    }
+  }
+
 }

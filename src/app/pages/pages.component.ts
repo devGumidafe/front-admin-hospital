@@ -1,5 +1,6 @@
 import { SettingsService } from './../services/settings.service';
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../services/sidebar.service';
 
 declare function init_plugins(): void;
 
@@ -11,8 +12,9 @@ declare function init_plugins(): void;
 })
 export class PagesComponent implements OnInit {
 
-  constructor(private settingsService: SettingsService) {
+  constructor(private settingsService: SettingsService, private sideBarService: SidebarService) {
     this.settingsService.loadTheme();
+    this.sideBarService.loadMenu();
   }
 
   ngOnInit(): void {

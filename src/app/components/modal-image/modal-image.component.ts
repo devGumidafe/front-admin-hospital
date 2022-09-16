@@ -58,7 +58,7 @@ export class ModalImageComponent implements OnInit {
 
           this.fileUploadService.uploadUrl(imageURL, type, id)
             .subscribe((response: any) => {
-              if (type === 'users') {
+              if (type === 'users' && id === this.userService.user.id) {
                 this.userService.user.image = response.user.image;
                 localStorage.setItem('user', JSON.stringify(this.userService.user));
               }

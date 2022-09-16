@@ -18,7 +18,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
 
   constructor() {
     this.intervalSubscription = this.returnInterval()
-      .subscribe(console.log);
+      .subscribe();
   }
 
   ngOnInit(): void {

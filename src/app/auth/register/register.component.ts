@@ -38,8 +38,15 @@ export class RegisterComponent implements OnInit {
     this.userService.createUser(this.registerForm.value)
       .subscribe(
         (response) => {
-          this.router.navigateByUrl('/');
-
+          Swal.fire({
+            icon: 'success',
+            title: 'Registro',
+            text: 'Usuario creado correctamente',
+            showCloseButton: true,
+            confirmButtonText: 'Ok',
+          }).then((result) => {
+            this.router.navigateByUrl('/');
+          })
         },
         (err) => {
           Swal.fire('Error', err.error.message, 'error');

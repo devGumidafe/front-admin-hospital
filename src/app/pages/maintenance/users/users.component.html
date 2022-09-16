@@ -42,7 +42,7 @@
             <tbody>
 
               <tr *ngFor="let user of users">
-                <td class="text-center"><img [src]="user?.image | image: 'users'" width="40" title="Avatar usuario"
+                <td class="text-center"><img [src]="user.image | image: 'users'" width="40" title="Avatar usuario"
                     (click)="openModal(user)" class="img-circle cursor"></td>
                 <td>{{user.email}}</td>
                 <td>{{user.name}}</td>
@@ -56,7 +56,7 @@
                     <option value="USER">USER</option>
                   </select>
                 </td>
-                <td class="text-nowrap text-center">
+                <td class="text-nowrap text-center" *ngIf="currentUser.role === 'ADMIN'">
                   <a data-toggle="tooltip" data-original-title="Eliminar" class="cursor" (click)="deleteUser(user)"> <i
                       class="fa fa-close text-danger"></i> </a>
                 </td>

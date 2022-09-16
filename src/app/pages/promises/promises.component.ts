@@ -11,19 +11,6 @@ export class PromisesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // const promise = new Promise((resolve, reject) => {
-    //   if (false) {
-    //     resolve('Hello world');
-    //   } else {
-    //     reject('Upsss something went wrong');
-    //   }
-    // });
-
-    // promise.then((response) => {
-    //   console.log(response);
-    // }).catch((error) => {
-    //   console.log(error);
-    // });
     this.getUsers();
   }
 

@@ -14,11 +14,11 @@ export class PagesComponent implements OnInit {
 
   constructor(private settingsService: SettingsService, private sideBarService: SidebarService) {
     this.settingsService.loadTheme();
-    this.sideBarService.loadMenu();
   }
 
   ngOnInit(): void {
     init_plugins();
+    this.sideBarService.loadMenu();
   }
 
 }

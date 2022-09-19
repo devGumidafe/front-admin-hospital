@@ -80,6 +80,10 @@ export class UserService {
     return this.httpClient.delete(`${base_url}/users/${user.id}`);
   }
 
+  getRole(): 'ADMIN' | 'USER' {
+    return this.user.role || 'USER';
+  }
+
   changeRole(user: User) {
     return this.httpClient.put(`${base_url}/users/change-role/${user.id}`, user.role);
   }

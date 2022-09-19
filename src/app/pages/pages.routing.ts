@@ -15,6 +15,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { SearchComponent } from './search/search.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -31,10 +32,12 @@ const routes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
 
       // Mantenimientos
-      { path: 'users', component: UsersComponent, data: { title: 'Mantenimiento usuarios' } },
       { path: 'hospitals', component: HospitalsComponent, data: { title: 'Mantenimiento hospitales' } },
       { path: 'doctors', component: DoctorsComponent, data: { title: 'Mantenimiento médicos' } },
       { path: 'doctors/:id', component: DoctorComponent, data: { title: 'Editar médico' } },
+
+      // Rutas de admin
+      { path: 'users', canActivate: [AdminGuard], component: UsersComponent, data: { title: 'Mantenimiento usuarios' } }
     ]
   }
 ];

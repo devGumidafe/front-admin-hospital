@@ -19,7 +19,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy  {
     this.titleSubs$ = this.getArgumentsRoute()
       .subscribe(({ title }) => {
         this.title = title;
-        this.documentTitle.title = `AdminDashboard - ${title}`;
+        this.documentTitle.title = `Hospital Dashboard - ${title}`;
       });
 
   }

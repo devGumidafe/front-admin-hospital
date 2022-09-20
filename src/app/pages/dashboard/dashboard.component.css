@@ -1,0 +1,10 @@
+.image-container{
+    width: 90%;
+    height: 768px;
+    background-image: url(../../../assets/images/hospital-home.jpeg);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+

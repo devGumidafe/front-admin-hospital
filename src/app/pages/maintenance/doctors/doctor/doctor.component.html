@@ -33,7 +33,7 @@
 
           <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" [disabled]="doctorForm.invalid">
             <i class="fa fa-save"></i>
-            Guardar</button>
+            Guardar cambios</button>
         </form>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <h6 class="card-subtitle">{{hospitalSelected.name}}</h6>
 
         <div class="input-group">
-          <img [src]="hospitalSelected.image | image: 'doctors'" alt="Foto médico">
+          <img [src]="hospitalSelected.image | image: 'hospitals'" alt="Foto médico" class="w100p">
         </div>
 
       </div>

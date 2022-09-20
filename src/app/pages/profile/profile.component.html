@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Mi perfil</h4>
-        <h6 class="card-subtitle">Ajustes</h6>
+        <h6 class="card-subtitle">Actualizar información</h6>
         <form class="form p-t-20" [formGroup]="profileForm" (ngSubmit)="updateUser()">
           <div class="form-group">
             <label for="name">Nombre</label>
@@ -48,7 +48,7 @@
           <img *ngIf="imageTemp" [src]="imageTemp" alt="user image" class="img-avatar" />
         </div>
 
-        <input type="file" title="upload image" (change)="onImageSelected($event)" />
+        <input id="files" type="file" title="Subir imagen" (change)="onImageSelected($event)" />
 
         <br />
         <br />

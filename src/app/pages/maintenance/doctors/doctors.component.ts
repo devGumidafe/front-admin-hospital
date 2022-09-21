@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Doctor } from 'src/app/models/doctor.model';
+import { User } from 'src/app/models/user.model';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { ModalImageService } from 'src/app/services/modal-image.service';
 import { SearchesService } from 'src/app/services/searches.service';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,10 +18,13 @@ export class DoctorsComponent implements OnInit, OnDestroy {
   public doctors: Doctor[] = [];
   public totalDoctors: number = 0;
   public loading: boolean = true;
+  public currentUser: User;
 
   public imageSubs!: Subscription;
 
-  constructor(private modalImageService: ModalImageService, private doctorService: DoctorService, private searchesService: SearchesService) {
+  constructor(private modalImageService: ModalImageService,
+    private doctorService: DoctorService, private searchesService: SearchesService, private userService: UserService) {
+    this.currentUser = this.userService.user;
     this.imageSubs = this.modalImageService.newImage.subscribe((img: any) => this.loadDoctors());
   }
 

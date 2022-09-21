@@ -8,6 +8,7 @@ import { UserService } from '../../../../services/user.service';
 import Swal from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-doctor',
@@ -20,9 +21,15 @@ export class DoctorComponent implements OnInit, AfterViewInit {
   public hospitals: Hospital[] = [];
   public doctorSelected!: Doctor;
   public hospitalSelected?: Hospital;
+  private currentUser: User;
 
   constructor(private formBuilder: FormBuilder, private hospitalService: HospitalService, private doctorService: DoctorService, private userService: UserService,
     private router: Router, private activatedRoute: ActivatedRoute) {
+    this.currentUser = this.userService.user;
+
+    if (!this.currentUser || this.currentUser.role !== 'ADMIN') {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 
   ngOnInit(): void {

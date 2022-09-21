@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Hospital } from 'src/app/models/hospital.model';
+import { User } from 'src/app/models/user.model';
 import { ModalImageService } from 'src/app/services/modal-image.service';
 import { SearchesService } from 'src/app/services/searches.service';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 import { HospitalService } from '../../../services/hospital.service';
@@ -17,11 +19,13 @@ export class HospitalsComponent implements OnInit, OnDestroy {
   public hospitals: Hospital[] = [];
   public totalHospitals: number = 0;
   public loading: boolean = true;
-
+  public currentUser: User;
+  
   public imageSubs!: Subscription;
 
   constructor(private hospitalService: HospitalService, private modalImageService: ModalImageService,
-    private searchesService: SearchesService) {
+    private searchesService: SearchesService, private userService: UserService) {
+    this.currentUser = this.userService.user;
 
     this.imageSubs = this.modalImageService.newImage.subscribe((img: any) => this.loadHospitals());
   }
